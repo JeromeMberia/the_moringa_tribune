@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import Http404, HttpResponse
 import datetime as dt
 from news.models import Article
-from django.db.models import FieldDoesNotExist
+from django.db.models import FieldDoesNotExist, ObjectDoesNotExist
 
 
 
@@ -50,5 +50,12 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-news/search.html',{"message":message})
+
+def article(request,article_id):
+    try:
+        article = Article.objects.get(id = article_id)
+    except ObjectDoesNotExist:
+        raise Http404()
+    return render(request,"all-news/article.html", {"article":article})
 
 
