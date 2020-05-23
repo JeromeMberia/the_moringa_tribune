@@ -1,4 +1,4 @@
-#!/home/jerome/The-Moringa-Tribune/virtual/bin/python3.8
+#!/home/jerome/the_moringa_tribune/virtual/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
