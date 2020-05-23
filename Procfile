@@ -1,1 +1,4 @@
-web: gunicorn the--moringa--tribune.wsgi 
+release: python manage.py makemigrations news
+release: python manage.py migrate
+
+web: gunicorn tribune.wsgi
